@@ -1,0 +1,8 @@
+oauth:
+  client:
+    name: ${OAUTH_CLIENT_NAME:myappname123}
+    secret: ${OAUTH_CLIENT_SECRET:myappsecret123}
+
+jwt:
+  secret: ${JWT_SECRET:MY-JWT-SECRET}
+  expiration: ${JWT_EXPIRATION:86400000}
