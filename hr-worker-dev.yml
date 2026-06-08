@@ -1,13 +1,18 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/db_hr_worker  #porta 5433
+    url: jdbc:postgresql://localhost:5433/db_hr_worker
     username: postgres
     password: 1234567
 
   jpa:
     hibernate:
-      ddl-auto: create #create para gerar as tabelas automaticamente
+      ddl-auto: create
     show-sql: true
+    defer-datasource-initialization: true  #garante que JPA cria as tabelas antes do data.sql
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always  #garante que o data.sql sempre seja executado
