@@ -1,26 +1,13 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_hr_worker
+    url: jdbc:postgresql://localhost:5433/db_hr_worker  #porta 5433
     username: postgres
     password: 1234567
 
   jpa:
     hibernate:
-      ddl-auto: none
-
+      ddl-auto: create #create para gerar as tabelas automaticamente
+    show-sql: true
     properties:
       hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-        hbm2ddl:
-          delimiter: ;
-
-      javax:
-        persistence:
-          schema-generation:
-            create-source: metadata
-            scripts:
-              action: create
-              create-target: create.sql
-              
+        dialect: org.hibernate.dialect.PostgreSQLDialect
