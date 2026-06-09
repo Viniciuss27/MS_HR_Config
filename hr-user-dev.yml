@@ -8,6 +8,11 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+    defer-datasource-initialization: true  #garante que JPA cria as tabelas antes do data.sql
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always  #garante que o data.sql sempre seja executado
