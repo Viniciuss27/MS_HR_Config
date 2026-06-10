@@ -1,15 +1,18 @@
 spring:
   datasource:
-    url: jdbc:postgresql://hr-worker-pg12:5432/db_hr_worker
+    url: jdbc:postgresql://hr-worker-pg16:5432/db_hr_worker  
     username: postgres
     password: 1234567
 
   jpa:
     hibernate:
-      ddl-auto: none
-
+      ddl-auto: create  # 👈 cria as tabelas
+    show-sql: true
+    defer-datasource-initialization: true
     properties:
       hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always
