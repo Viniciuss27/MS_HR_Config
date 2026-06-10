@@ -6,7 +6,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create  # 👈 cria as tabelas
+      ddl-auto: create  #cria as tabelas
     show-sql: true
     defer-datasource-initialization: true
     properties:
