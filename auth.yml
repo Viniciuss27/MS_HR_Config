@@ -29,7 +29,7 @@ feign:
 resilience4j:
   circuitbreaker:
     instances:
-      hr-user:
+      user:
         sliding-window-size: 5
         failure-rate-threshold: 50
         wait-duration-in-open-state: 10s
