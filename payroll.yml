@@ -30,6 +30,12 @@ spring:
 server:
   port: ${port:0}  
 
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
