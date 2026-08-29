@@ -22,18 +22,6 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-feign:
-  circuitbreaker:
-    enabled: true
-
-resilience4j:
-  circuitbreaker:
-    instances:
-      user:
-        sliding-window-size: 5
-        failure-rate-threshold: 50
-        wait-duration-in-open-state: 10s
-
 server:
   port: ${port:0}
 
@@ -57,8 +45,3 @@ eureka:
 jwt:
   secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION}
-    
-oauth2:
-  client:
-    client-id: ${CLIENT_ID} 
-    client-secret: ${CLIENT_SECRET}
