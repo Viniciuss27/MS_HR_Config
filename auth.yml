@@ -1,18 +1,18 @@
 spring:
   application:
     name: auth
-  
+
   datasource:
     url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_AUTH}
     driver-class-name: org.postgresql.Driver
     username: ${DB_USER}
     password: ${DB_PASSWORD}
-  
+
   flyway:
     enabled: true
     baseline-on-migrate: true
     locations: classpath:db/migration
-  
+
   jpa:
     show-sql: true
     hibernate:
@@ -23,7 +23,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
 server:
-  port: ${port:0}
+  port: ${PORT:0}
 
 springdoc:
   api-docs:
@@ -45,3 +45,9 @@ eureka:
 jwt:
   secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
