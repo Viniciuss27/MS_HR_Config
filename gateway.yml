@@ -9,10 +9,10 @@ spring:
           enabled: false
 
       routes:
-        - id: worker
-          uri: lb://worker
+        - id: employee
+          uri: lb://employee
           predicates:
-            - Path=/workers/**   
+            - Path=/employees/**   
           filters:
             - StripPrefix=0
 
@@ -20,13 +20,6 @@ spring:
           uri: lb://payroll
           predicates:
             - Path=/payments/**  
-          filters:
-            - StripPrefix=0
-
-        - id: user
-          uri: lb://user
-          predicates:
-            - Path=/users/** 
           filters:
             - StripPrefix=0
 
